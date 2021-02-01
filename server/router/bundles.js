@@ -16,7 +16,8 @@ router.use('/service1.js', createProxyMiddleware({
   // old path: '^/bundles/service1.js'
   // new path: service1.bundle
   pathRewrite: {
-    '^/bundles/service1.js': service1.bundle,
+    // '^/bundles/service1.js': service1.bundle,
+    '^.*': service1.bundle
     // change path to app.js
   },
   // needed for virtual hosted sites
@@ -26,7 +27,8 @@ router.use('/service1.js', createProxyMiddleware({
 router.use('/service2.js', createProxyMiddleware({
   target: service2.url,
   pathRewrite: {
-    '^/bundles/service2.js': service2.bundle,
+    // '^/bundles/service2.js': service2.bundle,
+    '^.*': service2.bundle
   },
   changeOrigin: true,
 }));
@@ -34,13 +36,13 @@ router.use('/service2.js', createProxyMiddleware({
 router.use('/service3.js', createProxyMiddleware({
   target: service3.url,
   pathRewrite: {
-    '^/bundles/service3.js': service3.bundle,
+    // '^/bundles/service3.js': service3.bundle,
+    '^.*': service3.bundle
   },
   changeOrigin: true,
 }));
 
-// router.use('/', createProxyMiddleware({
-// router.use('/rooms/:id/', createProxyMiddleware({
+
 router.use('/service4.js', createProxyMiddleware({
   target: service4.url,
   pathRewrite: {

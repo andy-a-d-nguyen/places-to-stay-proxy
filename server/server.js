@@ -16,6 +16,6 @@ app.use('/:id/bundles', router.bundles);
 // Handling AJAX requests to the API by passing off requests to the api router
 app.use('/api', router.api);
 // app.use('/', router.api);
-
+// app.use('/:id/api', router.api);
 
 module.exports = app;
