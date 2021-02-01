@@ -6,9 +6,9 @@ const {
 
 const router = Router();
 
-router.use(service1.api, createProxyMiddleware({ target: service1.url, changeOrigin: true })); // api: service1
 router.use(service2.api, createProxyMiddleware({ target: service2.url, changeOrigin: true }));
 router.use(service3.api, createProxyMiddleware({ target: service3.url, changeOrigin: true }));
 router.use(service4.api, createProxyMiddleware({ target: service4.url, changeOrigin: true }));
+router.use(service1.api, createProxyMiddleware({ target: service1.url, changeOrigin: true })); // api: service1
 
 module.exports = router;
